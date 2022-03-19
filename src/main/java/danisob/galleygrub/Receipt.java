@@ -3,14 +3,16 @@ package danisob.galleygrub;
 public class Receipt implements Ticket {
     
     private double total;
+    private Comanda order;
 
     public Receipt(Comanda order) {
-        this.total = order.getTotal();
+    	this.total = order.getTotal();
+    	this.order = order;
     }
 
     @Override
     public Comanda getOrder() {
-        return null; // FIXME:
+        return order;
     }
     
     @Override
@@ -25,7 +27,7 @@ public class Receipt implements Ticket {
 
     @Override
     public double total() {
-        return 0.0; // FIXME:
+    	return this.total;
     }
 
     @Override
@@ -35,9 +37,18 @@ public class Receipt implements Ticket {
 
     @Override
     public void print() {
-        // FIXME:
+    	System.out.println("\n\t --- ORDER ---");
+    	if (this.order instanceof Order) {
+    		Order ord = (Order) this.order;
+    		for (Item i : ord.itemList()) {
+    			String extraStr = i.extra() == null ? "" : " w/ " + i.extra();
+    	        System.out.print("\t" + i.name() + extraStr + "...." + i.price() + "$\n");
+            }
+    		return;
+    	}
+    	System.out.println("Cannot print order of type " + this.order.getClass());
+        
     }
 
-    
 
 }
