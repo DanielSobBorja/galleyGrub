@@ -7,14 +7,14 @@ public class Item implements Product {
     private String extra;
 
     public Item(String name, double price) {
-        this.name = name;
-        this.price = price;
+        this(name, price, null);
     }
 
     public Item(String name, double price, String extra) {
         this.name = name;
         this.price = price;
         this.extra = extra;
+        ItemFactory.addItem(ItemFactory.size(), this);
     }
 
 
@@ -57,8 +57,8 @@ public class Item implements Product {
     public int hashCode() {
         int result=17;
         result=31*result+((int)this.price*100);
-        result=31*result+(this.name!=null ? this.name.hashCode():0);
-        result=31*result+(this.extra!=null ? this.extra.hashCode():0);
+        result=31*result+(this.name != null ? this.name.hashCode() : 0);
+        result=31*result+(this.extra != null ? this.extra.hashCode() : 0);
         return result;
     }
     

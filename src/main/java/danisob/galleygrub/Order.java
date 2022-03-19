@@ -15,14 +15,12 @@ public class Order implements Comanda {
     // Interface methods
     @Override
     public void addItem(String name, double price) {
-        Item item = new Item(name, price);
-        updateTotal(price);
-        itemList.add(item);
+        this.addItem(name, price, null);
     }
 
     @Override
     public void addItem(String name, double price, String extra) {
-        Item item = new Item(name, price, extra);
+        Item item = ItemFactory.getItem(name, price, extra);
         updateTotal(price);
         itemList.add(item);
     }

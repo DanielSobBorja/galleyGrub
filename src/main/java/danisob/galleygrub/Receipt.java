@@ -37,7 +37,7 @@ public class Receipt implements Ticket {
 
     @Override
     public void print() {
-    	System.out.println("\n\t --- ORDER ---");
+    	System.out.println("\n\t --- RECEIPT ---");
     	if (this.order instanceof Order) {
     		Order ord = (Order) this.order;
     		String extraStr;
@@ -45,7 +45,7 @@ public class Receipt implements Ticket {
     			extraStr = i.extra() == null ? "" : " w/ " + i.extra();
     	        System.out.print("\t" + i.name() + extraStr + "...." + i.price() + "$\n");
             }
-    		System.out.println("\tTOTAL --------> " + this.total + "$");
+    		System.out.println("\tTOTAL --------> " + this.total() + "$");
     		return;
     	}
     	System.out.println("Cannot print order of type " + this.order.getClass());

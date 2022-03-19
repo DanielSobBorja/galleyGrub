@@ -204,7 +204,7 @@ public class App
          */
 
         /* TODO: DESCOMENTAR
-        System.out.print("\n\t --- PRINTIG RECEIPT BIPBIPBIP ---  \n");
+        System.out.print("\n\t --- PRINTING RECEIPT BIPBIPBIP ---  \n");
 
         Ticket receiptExtra = new Receipt(order);
         receiptExtra.setChain(regular);
