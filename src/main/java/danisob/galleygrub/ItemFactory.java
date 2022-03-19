@@ -4,12 +4,17 @@ import java.util.HashMap;
 
 public class ItemFactory {
 	
-	//private static final ItemFactory itemFactory = new ItemFactory();
+	private static ItemFactory itemFactory;
 	private static HashMap<Integer, Item> items = new HashMap<Integer, Item>();
 	
-	public ItemFactory() {
-		
+	public static ItemFactory getItemFactory() {
+		if (itemFactory == null) {
+			ItemFactory.itemFactory = new ItemFactory();
+		}
+		return ItemFactory.itemFactory;
 	}
+	
+	private ItemFactory() {};
 	
 	// Lo hago void para poder ir a la otra función sin return
 	public static void getItem(String name, double price) {
@@ -27,8 +32,8 @@ public class ItemFactory {
 		return newItem;
 	}
 	
-	public static void addItem(int hashCode, Item item) {
-		items.put(hashCode, item);
+	public static void addItem(int i, Item item) {
+		items.put(i, item);
 	}
 	
 	public static int size() {

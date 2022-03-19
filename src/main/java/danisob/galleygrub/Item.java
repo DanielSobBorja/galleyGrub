@@ -40,10 +40,12 @@ public class Item implements Product {
         return false; // FIXME:
     }
 
-    @Override
-    public String toString() {
-        return this.name() + "...." + this.price() + "$";
+	
+    @Override 
+    public String toString() { 
+    	return this.name() + "...." + this.price() + "$"; 
     }
+	 
 
     @Override
     public boolean equals(Object o) {
