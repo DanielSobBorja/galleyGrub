@@ -40,10 +40,12 @@ public class Receipt implements Ticket {
     	System.out.println("\n\t --- ORDER ---");
     	if (this.order instanceof Order) {
     		Order ord = (Order) this.order;
+    		String extraStr;
     		for (Item i : ord.itemList()) {
-    			String extraStr = i.extra() == null ? "" : " w/ " + i.extra();
+    			extraStr = i.extra() == null ? "" : " w/ " + i.extra();
     	        System.out.print("\t" + i.name() + extraStr + "...." + i.price() + "$\n");
             }
+    		System.out.println("\tTOTAL --------> " + this.total + "$");
     		return;
     	}
     	System.out.println("Cannot print order of type " + this.order.getClass());
