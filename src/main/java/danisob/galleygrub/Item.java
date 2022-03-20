@@ -2,9 +2,9 @@ package danisob.galleygrub;
 
 public class Item implements Product {
 
-    private String name;
-    private double price;
-    private String extra;
+	protected String name;
+	protected double price;
+	protected String extra;
 
     public Item(String name, double price) {
         this(name, price, null);

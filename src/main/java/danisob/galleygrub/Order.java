@@ -3,13 +3,16 @@ package danisob.galleygrub;
 import java.util.ArrayList;
 import java.util.List;
 
+import danisob.galleygrub.extras.Extra;
+
 public class Order implements Comanda {
     
     private double total;
-    private List<Item> itemList;
+    private List<Item> items;
+    
 
     public Order() {
-        itemList = new ArrayList<>();
+        items = new ArrayList<>();
     }
 
     // Interface methods
@@ -21,18 +24,17 @@ public class Order implements Comanda {
     @Override
     public void addItem(String name, double price, String extra) {
         Item item = ItemFactory.getItem(name, price, extra);
-        updateTotal(price);
-        itemList.add(item);
+        items.add(item);
     }
 
     @Override
     public int size() {
-        return this.itemList.size();
+        return this.items.size();
     }
 
     @Override
-    public List<Item> itemList() {
-        return this.itemList;
+    public List<Item> items() {
+        return this.items;
     }
 
     @Override
@@ -48,7 +50,7 @@ public class Order implements Comanda {
     @Override
     public void display() {
         System.out.println("\n\t --- ORDER ---");
-        for (Item i : itemList) {
+        for (Item i : items) {
             itemDisplay(i);
         }
     }

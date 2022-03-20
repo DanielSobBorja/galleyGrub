@@ -1,5 +1,11 @@
 package danisob.galleygrub;
 
+import danisob.galleygrub.extras.CheeseExtra;
+import danisob.galleygrub.extras.Extra;
+import danisob.galleygrub.extras.Regular;
+import danisob.galleygrub.extras.SauceExtra;
+import danisob.galleygrub.extras.SizeLargeExtra;
+
 /**
  * 
  * Bob Esponja trabaja como cocinero en el Krusty Krab, 
@@ -184,8 +190,7 @@ public class App
          * 
          * El precio total de la comanda se guarda en Order.
          */
-
-        /* TODO: DESCOMENTAR
+        
         Extra regular = new Regular(); // suma el precio base
         Extra cheese = new CheeseExtra(); // suma el precio del extra cheese
         Extra sauce = new SauceExtra(); // suma el precio de sauce
@@ -203,7 +208,6 @@ public class App
          * y lo muestra en pantalla.
          */
 
-        /* TODO: DESCOMENTAR
         System.out.print("\n\t --- PRINTING RECEIPT BIPBIPBIP ---  \n");
 
         Ticket receiptExtra = new Receipt(order);
@@ -211,7 +215,7 @@ public class App
 
         receiptExtra.total();
         receiptExtra.print();
-        */
+        
     }
 
     public static void display(Product item) {

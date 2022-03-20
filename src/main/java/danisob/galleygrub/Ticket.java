@@ -1,5 +1,7 @@
 package danisob.galleygrub;
 
+import danisob.galleygrub.extras.Extra;
+
 public interface Ticket {
 
     public Comanda getOrder();
