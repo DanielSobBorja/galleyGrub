@@ -27,7 +27,7 @@ public class ItemFactory {
 				return items.get(i);
 			}
 		}
-		// If not in items (edge case)
+		// If not in items (adds it to the hashmap)
 		Item newItem = new Item(name, price, extra);
 		return newItem;
 	}

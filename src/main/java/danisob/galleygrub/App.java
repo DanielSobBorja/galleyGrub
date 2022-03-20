@@ -131,9 +131,9 @@ public class App
          * 
          * NO ACTUALICES EL PRECIO DEL ITEM
          * con el cargo extra 
-         * pues eso lo haremos con otro componente. 
+         * pues eso lo haremos con otro componente.
          */
-        /* TODO: descomentar
+        
         System.out.print("\n\t --- GALLEY GRUB ---  \n");
 
         patty = new Item("Krabby Patty", 1.25, "cheese");
@@ -152,7 +152,7 @@ public class App
          * y realiza una comanda cargada
          * de extras.
          */
-        /* TODO: descomentar
+        
         order = new Order();
 
         order.addItem("Krabby Patty", 1.25, "cheese");
@@ -195,7 +195,7 @@ public class App
         cheese.setNextExtra(sauce);
         sauce.setNextExtra(size);
         
-        */
+        
 
         /**
          * Squidward Tentacles genera el recibo,

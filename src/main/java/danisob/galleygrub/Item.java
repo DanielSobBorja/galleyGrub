@@ -36,23 +36,24 @@ public class Item implements Product {
 
     @Override
     public boolean isRegular() {
-        //return extra == null ? true : false; // regular si no tiene extras?
-        return false; // FIXME:
+        return extra == null ? true : false;
     }
 
 	
     @Override 
-    public String toString() { 
-    	return this.name() + "...." + this.price() + "$"; 
+    public String toString() {
+    	String extraStr = this.isRegular() ? "" : " w/ " + this.extra();
+    	String extraNum = this.isRegular() ? "" : " + " + String.format("%.2f", Prices.getPrices().get(this.extra())) + "$";
+    	return this.name() + extraStr + "...." + String.format("%.2f", this.price()) + "$" + extraNum; 
     }
 	 
 
     @Override
     public boolean equals(Object o) {
-        if (o == this) return true; // sí mismo
+        if (o == this) return true;
         if (!(o instanceof Item)) return false;
         Item i = (Item) o;
-        return this.name == i.name();
+        return this.hashCode() == i.hashCode();
     }
 
     @Override

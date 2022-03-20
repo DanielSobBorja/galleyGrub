@@ -55,7 +55,6 @@ public class Order implements Comanda {
 
     // Class methods
     private void itemDisplay(Item item) {
-        String extraStr = item.extra() == null ? "" : " w/ " + item.extra();
-        System.out.print("\t" + item.name() + extraStr + "...." + item.price() + "$\n");
+    	System.out.print("\t" + item + "\n");
     }
 }
