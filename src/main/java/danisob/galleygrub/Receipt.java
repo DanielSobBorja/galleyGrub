@@ -1,6 +1,7 @@
 package danisob.galleygrub;
 
 import danisob.galleygrub.extras.Extra;
+import danisob.galleygrub.extras.Regular;
 
 public class Receipt implements Ticket {
     
@@ -36,9 +37,10 @@ public class Receipt implements Ticket {
 
     @Override
     public void sumExtrasCharge() {
-    	if (firstExtra != null) {
-    		this.firstExtra.sumExtras(order);
+    	if (firstExtra == null) {
+    		firstExtra = new Regular();
     	}
+    	this.firstExtra.sumExtras(order);
     }
 
     @Override
