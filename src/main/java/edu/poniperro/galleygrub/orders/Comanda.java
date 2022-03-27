@@ -1,6 +1,6 @@
-package edu.poniperro.orders;
+package edu.poniperro.galleygrub.orders;
 
-import edu.poniperro.items.Item;
+import edu.poniperro.galleygrub.items.Item;
 
 import java.util.List;
 

@@ -1,15 +1,15 @@
-package edu.poniperro.items;
+package edu.poniperro.galleygrub.items;
 
-import edu.poniperro.Prices;
+import edu.poniperro.galleygrub.Prices;
 
 public class Item implements Product {
 
 	protected String name;
 	protected double price;
-	protected String extra;
+	protected String extra = "";
 
     public Item(String name, double price) {
-        this(name, price, null);
+        this(name, price, "");
     }
 
     public Item(String name, double price, String extra) {
@@ -18,9 +18,7 @@ public class Item implements Product {
         this.extra = extra;
         ItemFactory.addItem(ItemFactory.size(), this);
     }
-
-
-
+    
     @Override
     public String name() {
         return this.name;
@@ -30,7 +28,7 @@ public class Item implements Product {
     public double price() {
         return this.price;
     }
-
+    
     @Override
     public String extra() {
         return this.extra;
@@ -38,7 +36,7 @@ public class Item implements Product {
 
     @Override
     public boolean isRegular() {
-        return extra == null ? true : false;
+        return this.extra().isBlank();
     }
 
 	

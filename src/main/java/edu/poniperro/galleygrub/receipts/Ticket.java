@@ -1,7 +1,7 @@
-package edu.poniperro.receipts;
+package edu.poniperro.galleygrub.receipts;
 
-import edu.poniperro.extras.Extra;
-import edu.poniperro.orders.Comanda;
+import edu.poniperro.galleygrub.extras.Extra;
+import edu.poniperro.galleygrub.orders.Comanda;
 
 public interface Ticket {
 

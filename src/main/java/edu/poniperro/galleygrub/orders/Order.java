@@ -1,25 +1,24 @@
-package edu.poniperro.orders;
+package edu.poniperro.galleygrub.orders;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-import edu.poniperro.items.Item;
-import edu.poniperro.items.ItemFactory;
+import edu.poniperro.galleygrub.items.Item;
+import edu.poniperro.galleygrub.items.ItemFactory;
 
 public class Order implements Comanda {
     
     private double total;
-    private List<Item> items;
+    private List<Item> items = new ArrayList<Item>();
     
 
-    public Order() {
-        items = new ArrayList<>();
-    }
+    public Order() {}
 
     // Interface methods
     @Override
     public void addItem(String name, double price) {
-        this.addItem(name, price, null);
+        this.addItem(name, price, "");
     }
 
     @Override
@@ -35,7 +34,7 @@ public class Order implements Comanda {
 
     @Override
     public List<Item> items() {
-        return this.items;
+        return Collections.unmodifiableList(this.items);
     }
 
     @Override

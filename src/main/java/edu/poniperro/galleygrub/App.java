@@ -1,16 +1,16 @@
-package edu.poniperro;
+package edu.poniperro.galleygrub;
 
-import edu.poniperro.extras.CheeseExtra;
-import edu.poniperro.extras.Extra;
-import edu.poniperro.extras.Regular;
-import edu.poniperro.extras.SauceExtra;
-import edu.poniperro.extras.SizeLargeExtra;
-import edu.poniperro.items.Item;
-import edu.poniperro.items.Product;
-import edu.poniperro.orders.Comanda;
-import edu.poniperro.orders.Order;
-import edu.poniperro.receipts.Receipt;
-import edu.poniperro.receipts.Ticket;
+import edu.poniperro.galleygrub.extras.CheeseExtra;
+import edu.poniperro.galleygrub.extras.Extra;
+import edu.poniperro.galleygrub.extras.Regular;
+import edu.poniperro.galleygrub.extras.SauceExtra;
+import edu.poniperro.galleygrub.extras.SizeLargeExtra;
+import edu.poniperro.galleygrub.receipts.Receipt;
+import edu.poniperro.galleygrub.items.Item;
+import edu.poniperro.galleygrub.items.Product;
+import edu.poniperro.galleygrub.orders.Comanda;
+import edu.poniperro.galleygrub.orders.Order;
+import edu.poniperro.galleygrub.receipts.Ticket;
 
 /**
  * 

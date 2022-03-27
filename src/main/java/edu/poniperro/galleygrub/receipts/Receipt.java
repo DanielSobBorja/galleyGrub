@@ -1,17 +1,16 @@
-package edu.poniperro.receipts;
+package edu.poniperro.galleygrub.receipts;
 
-import edu.poniperro.Prices;
-import edu.poniperro.extras.Extra;
-import edu.poniperro.extras.Regular;
-import edu.poniperro.items.Item;
-import edu.poniperro.orders.Comanda;
-import edu.poniperro.orders.Order;
+import edu.poniperro.galleygrub.Prices;
+import edu.poniperro.galleygrub.extras.Extra;
+import edu.poniperro.galleygrub.items.Item;
+import edu.poniperro.galleygrub.orders.Comanda;
+import edu.poniperro.galleygrub.orders.Order;
 
 public class Receipt implements Ticket {
     
-    private double total;
+    private double total = 0d;
     private Comanda order;
-    private Extra firstExtra;
+    private Extra firstExtra = null;
 
     public Receipt(Comanda order) {
     	this.order = order;
@@ -34,17 +33,19 @@ public class Receipt implements Ticket {
 
     @Override
     public double total() {
-    	this.sumExtrasCharge();
-    	this.total = order.getTotal();
+        if (this.total == 0d) {
+            this.sumExtrasCharge();
+            this.total = this.order.getTotal();
+        }
     	return this.total;
     }
 
     @Override
     public void sumExtrasCharge() {
-    	if (firstExtra == null) {
-    		firstExtra = new Regular();
-    	}
-    	this.firstExtra.sumExtras(order);
+    	if (this.firstExtra != null) {
+            this.firstExtra.sumExtras(this.order);
+        }
+
     }
 
     @Override
