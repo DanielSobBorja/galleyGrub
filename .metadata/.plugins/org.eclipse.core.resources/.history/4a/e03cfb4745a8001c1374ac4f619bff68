@@ -1,0 +1,61 @@
+package danisob.galleygrub;
+
+import danisob.galleygrub.extras.Extra;
+
+public class Receipt implements Ticket {
+    
+    private double total;
+    private Comanda order;
+    private Extra firstExtra; // Por la relación del diagrama
+
+    public Receipt(Comanda order) {
+    	this.total = order.getTotal();
+    	this.order = order;
+    }
+
+    @Override
+    public Comanda getOrder() {
+        return order;
+    }
+    
+    @Override
+    public void setChain(Extra extra) {
+        // FIXME:
+    }
+
+    @Override
+    public Extra getChain() {
+        return null; // FIXME:
+    }
+
+    @Override
+    public double total() {
+    	return this.total;
+    }
+
+    @Override
+    public void sumExtrasCharge() {
+        // FIXME
+    }
+
+    @Override
+    public void print() {
+    	System.out.println("\n\t --- RECEIPT ---");
+    	if (this.order instanceof Order) {
+    		Order ord = (Order) this.order;
+    		String extraStr;
+    		String extraNum;
+    		for (Item i : ord.itemList()) {
+    			extraStr = i.extra() == null ? "" : " w/ " + i.extra();
+    			extraNum = i.isRegular() ? "" : " + " + String.format("%.2f", Prices.getPrices().get(i.extra())) + "$";
+    	        System.out.print("\t" + i.name() + extraStr + "...." + i.price() + "$" + extraNum + "\n");
+            }
+    		System.out.println("\tTOTAL --------> " + this.total() + "$");
+    		return;
+    	}
+    	System.out.println("Cannot print comanda of type " + this.order.getClass());
+        
+    }
+
+
+}

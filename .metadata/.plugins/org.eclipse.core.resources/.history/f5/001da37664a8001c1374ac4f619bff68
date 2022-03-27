@@ -1,0 +1,22 @@
+package danisob.galleygrub.extras;
+
+import danisob.galleygrub.Comanda;
+import danisob.galleygrub.Prices;
+
+public class CheeseExtra extends Extra {
+	
+	private double CHEESE_PRICE = Prices.getPrices().get("cheese");
+	
+	public CheeseExtra() {
+		
+	}
+	
+	@Override
+	public void sumExtras(Comanda comanda) {
+		
+		comanda.updateTotal(CHEESE_PRICE);
+		if (nextExtra != null) {
+			nextExtra.ifPresent(n -> n.sumExtras(comanda));
+		}
+	}
+}

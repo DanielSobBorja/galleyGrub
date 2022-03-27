@@ -1,0 +1,15 @@
+package danisob.galleygrub;
+
+public class SizeMediumExtra extends Extra {
+	
+	private double SIZE_PRICE = Prices.getPrices().get("large");
+	
+	public SizeMediumExtra() {
+		
+	}
+	
+	@Override
+	public void sumExtras(Comanda comanda) {
+		
+	}
+}

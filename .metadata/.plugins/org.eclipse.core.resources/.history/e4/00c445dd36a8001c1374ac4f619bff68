@@ -1,0 +1,15 @@
+package danisob.galleygrub;
+
+public class SizeLargeExtra extends Extra {
+	
+	private double SAUCE_PRICE = Prices.getPrices().get("sauce");
+	
+	public SizeLargeExtra() {
+		
+	}
+	
+	@Override
+	public void sumExtras(Comanda comanda) {
+		
+	}
+}

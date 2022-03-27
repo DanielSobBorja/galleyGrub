@@ -1,0 +1,17 @@
+package danisob.galleygrub.extras;
+
+import danisob.galleygrub.Comanda;
+
+public class Regular extends Extra {
+	
+	public Regular() {
+		
+	}
+	
+	@Override
+	public void sumExtras(Comanda comanda) {
+		System.out.println(nextExtra);
+		comanda.updateTotal(comanda.getTotal());
+		nextExtra.ifPresent(n -> n.sumExtras(comanda));
+	}
+}

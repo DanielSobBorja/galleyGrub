@@ -1,0 +1,30 @@
+package danisob.galleygrub;
+
+import java.util.HashMap;
+
+public class ItemFactory {
+	
+	private static final ItemFactory itemFactory;
+	private static HashMap<String, Double> prices = new HashMap<String, Double>();
+	
+	public ItemFactory() {
+		
+	}
+	
+	public static Item getItem(String name, double price) {
+		return null;
+	}
+	
+	public static Item getItem(String name, double price, String extra) {
+		return null;
+	}
+	
+	public static int size() {
+		
+	}
+	
+	public static void clear() {
+		
+	}
+
+}

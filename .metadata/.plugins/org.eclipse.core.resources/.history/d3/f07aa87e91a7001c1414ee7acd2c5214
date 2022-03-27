@@ -1,0 +1,13 @@
+package danisob.galleygrub;
+
+public class ItemFactory {
+	
+	public ItemFactory() {
+		
+	}
+	
+	public static Item getItem(String, double) {
+		
+	}
+
+}

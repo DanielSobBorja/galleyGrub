@@ -1,0 +1,32 @@
+package danisob.galleygrub;
+
+import java.util.HashMap;
+
+public class ItemFactory {
+	
+	//private static final ItemFactory itemFactory = new ItemFactory();
+	private static HashMap<Integer, Item> items = new HashMap<Integer, Item>();
+	
+	public ItemFactory() {
+		
+	}
+	
+	// Me ha parecido más fácil utilizar el hashcode
+	public static Item getItem(int hashCode) {
+		return items.get(hashCode);
+	}
+	
+	
+	public static void addItem(int hashCode, Item item) {
+		items.put(hashCode, item);
+	}
+	
+	public static int size() {
+		return items.size();
+	}
+	
+	public static void clear() {
+		items.clear();
+	}
+
+}

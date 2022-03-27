@@ -1,0 +1,58 @@
+package danisob.galleygrub;
+
+public class Receipt implements Ticket {
+    
+    private double total;
+    private Comanda order;
+
+    public Receipt(Comanda order) {
+    	this.total = order.getTotal();
+    	this.order = order;
+    }
+
+    @Override
+    public Comanda getOrder() {
+        return order;
+    }
+    
+    @Override
+    public void setChain(Extra extra) {
+        // FIXME:
+    }
+
+    @Override
+    public Extra getChain() {
+        return null; // FIXME:
+    }
+
+    @Override
+    public double total() {
+    	return this.total;
+    }
+
+    @Override
+    public void sumExtrasCharge() {
+        
+    }
+
+    @Override
+    public void print() {
+    	System.out.println("\n\t --- RECEIPT ---");
+    	if (this.order instanceof Order) {
+    		Order ord = (Order) this.order;
+    		String extraStr;
+    		String extraNum;
+    		for (Item i : ord.itemList()) {
+    			extraStr = i.extra() == null ? "" : " w/ " + i.extra();
+    			extraNum = this.isRegular() ? "" : " + " + String.format("%.2f", Prices.getPrices().get(this.extra())) + "$"
+    	        System.out.print("\t" + i.name() + extraStr + "...." + i.price() + extraNum + "$\n");
+            }
+    		System.out.println("\tTOTAL --------> " + this.total() + "$");
+    		return;
+    	}
+    	System.out.println("Cannot print order of type " + this.order.getClass());
+        
+    }
+
+
+}

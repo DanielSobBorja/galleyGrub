@@ -1,0 +1,25 @@
+package danisob.galleygrub;
+
+public class ItemFactory {
+	
+	public ItemFactory() {
+		
+	}
+	
+	public static Item getItem(String name, double price) {
+		
+	}
+	
+	public static Item getItem(String name, double price, String extra) {
+		
+	}
+	
+	public static int size() {
+		
+	}
+	
+	public static void clear() {
+		
+	}
+
+}

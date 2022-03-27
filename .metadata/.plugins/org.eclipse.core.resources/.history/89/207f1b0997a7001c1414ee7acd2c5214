@@ -1,0 +1,34 @@
+package danisob.galleygrub;
+
+import java.util.HashMap;
+
+public class ItemFactory {
+	
+	//private static final ItemFactory itemFactory = new ItemFactory();
+	private static HashMap<Integer, Item> items = new HashMap<Integer, Item>();
+	
+	public ItemFactory() {
+		
+	}
+	
+	public static Item getItem(String name, double price) {
+		getItem(name, price, null);
+	}
+	
+	public static Item getItem(String name, double price, String extra) {
+		return null;
+	}
+	
+	public static void addItem(int hashCode, Item item) {
+		items.put(hashCode, item);
+	}
+	
+	public static int size() {
+		return items.size();
+	}
+	
+	public static void clear() {
+		items.clear();
+	}
+
+}

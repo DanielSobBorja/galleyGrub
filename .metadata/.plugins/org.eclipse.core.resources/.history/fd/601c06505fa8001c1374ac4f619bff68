@@ -1,0 +1,21 @@
+package danisob.galleygrub.extras;
+
+import danisob.galleygrub.Comanda;
+import danisob.galleygrub.Prices;
+
+public class SizeLargeExtra extends Extra {
+	
+	private double LARGE_PRICE = Prices.getPrices().get("large");
+	
+	public SizeLargeExtra() {
+		
+	}
+	
+	@Override
+	public void sumExtras(Comanda comanda) {
+		comanda.updateTotal(LARGE_PRICE);
+		System.out.println(LARGE_PRICE);
+		System.out.println(nextExtra);
+		nextExtra.ifPresent(n -> n.sumExtras(comanda));
+	}
+}
